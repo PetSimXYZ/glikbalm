@@ -55,7 +55,7 @@ function jsonError($err, $data = NULL)
 $isMobile = (strstr(strtolower($_SERVER['HTTP_USER_AGENT']), 'mobile') || strstr(strtolower($_SERVER['HTTP_USER_AGENT']), 'android'));
 
 //Constants
-$socketurl = "BloxPVP.com";
+$socketurl = "Bloxywin.com";
 $maxGameItems = 100;
 $minimumTotalTaxItems = 4; // Set To Above maxGameItems * 2 to Disable
 $minimumTotalTaxValue = 50;
