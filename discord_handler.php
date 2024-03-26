@@ -16,10 +16,10 @@ include_once "roblox_handler.php";
 include_once "inventory_handler.php";
 
 $webhooks = [
-    "games" => "https://discord.com/api/webhooks/1198318558254473406/vzOtmst2hohBgN3lhkQCWkZNvjdr1TX1RKZrPIxckJTzyrwu9XtACKXvKeWy-1dg2Z0a",
-    "error" => "https://discord.com/api/webhooks/1198318558254473406/vzOtmst2hohBgN3lhkQCWkZNvjdr1TX1RKZrPIxckJTzyrwu9XtACKXvKeWy-1dg2Z0a",
-    "tax_logs" => "https://discord.com/api/webhooks/1198318558254473406/vzOtmst2hohBgN3lhkQCWkZNvjdr1TX1RKZrPIxckJTzyrwu9XtACKXvKeWy-1dg2Z0a",
-    "giveaways" => "https://discord.com/api/webhooks/1198326991787667526/wP5CxsDXL-UF5XBbQ250fsE4vsQatOGf_ZVzflxLTidqqd4yT9d8JKE0eJmLlngDe-yr"
+    "games" => "later",
+    "error" => "https://discord.com/api/webhooks/1222042224381001789/3aoJOkYjQp2wJ639WsAkqv1XMhWmhfQ2J7PpUcDJVvul0TX10unInWLqRnyRH4TEcpYi",
+    "tax_logs" => "https://discord.com/api/webhooks/1222041813821685781/xYSsToTUKoBcKnzYNzf1sXQwfTxrOfZN21CVVHM2Brw2wSi6rKwu20tgrsnX0KkolgkA",
+    "giveaways" => "later"
 ];
 
 //Send Discord Webhook with Data
@@ -43,10 +43,10 @@ function sendWebhook($webhook, $data)
 function sendCustomWebhook($webhook, $data)
 {
     if (!isset($data["avatar_url"])) {
-        $data["avatar_url"] = "https://media.discordapp.net/attachments/1195397701848797254/1198323903043473449/Screenshot_111.png?ex=65be7d1a&is=65ac081a&hm=4bbcb35d46a34fa1cc95a972a6ebd34327da767fd6f793327907753c168d0b72&=&format=webp&quality=lossless";
+        $data["avatar_url"] = "https://cdn.discordapp.com/attachments/1214619646825599016/1222040635029065831/OIG4-removebg-preview_2.png?ex=6614c507&is=66025007&hm=4d8de11cac22dced7be82a8a476f0701aef5005eff7b72f370b5a5f0383080a4&";
     }
     if (!isset($data["username"])) {
-        $data["username"] = "BLOXPVP";
+        $data["username"] = "BLOXYWIN";
     }
     sendWebhook($webhook, $data);
 }
@@ -155,7 +155,7 @@ function sendGamePlayedWebhook($game_id,$coinflipticket = NULL) {
         ]
     ];
     if ($coinflipticket) {
-        $data["description"] = "A game has been played - Coinflip Id: [$coinflipticket](https://api.random.org/tickets/form?ticket=$coinflipticket)";
+        $data["description"] = "A game has been finished  - Coinflip Id: [$coinflipticket](https://api.random.org/tickets/form?ticket=$coinflipticket)";
     }
     sendWebhookEmbed("games", $data);
 }
